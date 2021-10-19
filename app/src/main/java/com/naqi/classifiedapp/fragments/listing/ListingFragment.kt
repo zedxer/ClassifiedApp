@@ -1,5 +1,6 @@
 package com.naqi.classifiedapp.fragments.listing
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,16 +43,22 @@ class ListingFragment : Fragment(), ListingAdapter.ItemListener {
         viewModel.listOfItems.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
+                    binding.refreshLayout.isRefreshing = false
                     binding.progressBar.visibility = View.GONE
                     if (!it.data!!.results.isNullOrEmpty()) adapter.setItems(ArrayList(it.data.results))
                 }
-                Resource.Status.ERROR ->
+                Resource.Status.ERROR ->{
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    binding.refreshLayout.isRefreshing = false
+                }
 
                 Resource.Status.LOADING ->
                     binding.progressBar.visibility = View.VISIBLE
             }
         })
+        binding.refreshLayout.setOnRefreshListener {
+            viewModel.refreshItems()
+        }
     }
 
     private fun setupRecyclerView() {

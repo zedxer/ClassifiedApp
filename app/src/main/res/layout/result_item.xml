@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -22,9 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_x_large"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +36,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
+        android:textSize="@dimen/text_size_large"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -46,7 +47,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
-        android:textSize="11sp"
+        android:textSize="@dimen/text_size_normal"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/price" />
 </androidx.constraintlayout.widget.ConstraintLayout>

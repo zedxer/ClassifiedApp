@@ -11,11 +11,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
 import com.naqi.classifiedapp.R
 import com.naqi.classifiedapp.databinding.ItemDetailFragmentBinding
 import com.naqi.classifiedapp.databinding.ListingFragmentBinding
+import com.naqi.classifiedapp.fragments.listing.ListingAdapter
 import com.naqi.classifiedapp.fragments.listing.ListingViewModel
 import com.naqi.classifiedapp.models.ResultItem
 import com.naqi.classifiedapp.utils.Constants.ITEM_JSON_KEY
@@ -28,6 +30,7 @@ import java.util.*
 class ItemDetailFragment : Fragment() {
     private var binding: ItemDetailFragmentBinding by autoCleared()
     private val viewModel: ItemDetailViewModel by viewModels()
+    private lateinit var adapter: ItemDetailImageAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,7 +57,14 @@ class ItemDetailFragment : Fragment() {
         binding.itemCreationDate.text = "Posted on ${Utils.formatDate(item.created_at)}"
         binding.itemName.text = item.name.capitalize(Locale.US)
         binding.itemPrice.text = item.price
+        setUpPager(item)
+    }
 
+    fun setUpPager(item:ResultItem) {
+        adapter = ItemDetailImageAdapter(context)
+        adapter.setItems(item.image_urls)
+        binding.pager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL;
+        binding.pager2.setAdapter(adapter)
     }
 
     fun setListeners() {
@@ -74,9 +84,7 @@ class ItemDetailFragment : Fragment() {
                         binding.titleOfItem.text = " ${binding.itemName.text}"
                         isShow = true
                     } else if (isShow) {
-                        //                    collapsingToolbarLayout.title = " "// careful there should a space between double quote otherwise it wont work
-                        binding.titleOfItem.text =
-                            " "// careful there should a space between double quote otherwise it wont work
+                        binding.titleOfItem.text = " "
                         isShow = false
                     }
                 }

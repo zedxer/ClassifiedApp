@@ -62,7 +62,7 @@ class ListingViewHolder(
 
         val imageLoader = (context?.applicationContext as ClassifiedApp).imageLoader
         imageLoader.displayImage(
-            item.image_urls.first(),
+            item.image_urls_thumbnails.first(),
             itemBinding.image
         )
     }
