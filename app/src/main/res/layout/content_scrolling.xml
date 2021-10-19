@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nestedScroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="70dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/descriptionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="@dimen/text_size_x_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project instructions
+
+
+Objective: Develop a Sample Classifieds Android App in Kotlin
+
+
+
+The UI decisions are at your liberty as long as the elements of aesthetics, information and attention to details are present.
+
+
+
+Product Requirements
+
+Fetch data from a back-end endpoint with a GET request:
+https://ey3f2y0nre.execute-api.us-east-1.amazonaws.com/default/dynamodb-writer
+
+
+
+The endpoint does not require any authentication to return a response.
+
+The endpoint will return a JSON response representing a list of listings, to be used as a datasource for the list of listings (see point 2 below).
+
+The app should display a list of listings. This screen should be the homepage of the app.
+Clicking on a listing in the list should open a new screen to display the details of that listing.
+
+
+Technical Requirements
+
+The app has automated tests: Unit, Integration, UI.
+Clean Architecture
+Your software should easily accommodate possible future requirement changes
+
+
+Bonus Points For
+
+
+
+Implement an image caching mechanism by creating your own framework that is used by the app in both screens. Design the framework in a way that the image caching framework can be reused in other applications.
+The app has one screen written in Java.
+
+
+Please build this app in the same way you would write code for a production app. Show us the best you can do. Our engineers will assess this project by evaluating different elements such as meeting requirements, as well as code quality.
+
+
+
+How to submit
+Upload your completed project to your GitHub, and then paste a link to the repository below in the form along with any comments you have about your solution and also send the link to the recruiting team." />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

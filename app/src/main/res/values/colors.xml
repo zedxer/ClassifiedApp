@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
+    <color name="colorAccent">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+
+<!--    uses color for widgets...-->
+    <color name="dark_slate_blue">#2a2d6d</color>
+    <color name="iris">#6b6fc4</color>
+    <color name="jade">#209492</color>
+    <color name="fadish_blue">#6187bf</color>
+    <color name="lightblue">#e8e9fb</color>
+
+    <color name="verylightpurple">#e8e9fb</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
+
+<!--shades of red-->
+    <color name="red">#d80000</color>
+    <color name="fade_red">#F03838</color>
+    <color name="maroon">#490101</color>
+    <color name="blown_red">#854242</color>
+    <color name="bright_red">#FF0000</color>
+    <color name="perfect_red">#DC0303</color>
+    <color name="dark_blood_red">#2C0202</color>
+
+<!--shades of grey-->
+    <color name="grayish">#c4c4c4</color>
+    <color name="pinkishgray">#BDB6B6</color>
+    <color name="scrollgray">#b3a9a9</color>
+    <color name="warmgrey">#707070</color>
+    <color name="dark_grey">#959595</color>
+    <color name="light_grey">#dbdbdb</color>
+    <color name="perfect_grey">#757575</color>
+    <color name="dark_metal_grey">#2B2B2B</color>
+    <color name="dark_redish_grey">#272626</color>
+
+
+<!--material palette theme-->
+    <color name="primary">#f10909</color>
+    <color name="primary_dark">#b50000</color>
+    <color name="primary_light">#ff5939</color>
+
+    <color name="secondary">#404040</color>
+    <color name="secondary_dark">#1a1a1a</color>
+    <color name="secondary_light">#6b6b6b</color>
+
+
+
+
+    <color name="loader_background">#6000</color>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+    <color name="fade_blue">#a0a3e3</color>
+    <color name="fade_green">#7BCD75</color>
+
 </resources>

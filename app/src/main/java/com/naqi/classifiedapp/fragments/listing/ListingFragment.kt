@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.naqi.classifiedapp.R
 import com.naqi.classifiedapp.databinding.ListingFragmentBinding
+import com.naqi.classifiedapp.utils.Constants.ITEM_JSON_KEY
 import com.naqi.classifiedapp.utils.Resource
 import com.naqi.classifiedapp.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -54,15 +55,16 @@ class ListingFragment : Fragment(), ListingAdapter.ItemListener {
     }
 
     private fun setupRecyclerView() {
-        adapter = ListingAdapter(this)
+        adapter = ListingAdapter(this, context)
         binding.listingRv.layoutManager = LinearLayoutManager(requireContext())
         binding.listingRv.adapter = adapter
     }
 
-    override fun onClickedItem(characterId: String) {
+    override fun onClickedItem(itemJson: String) {
         findNavController().navigate(
             R.id.action_listingFragment_to_itemDetailFragment,
-            bundleOf("id" to characterId)
+            bundleOf(ITEM_JSON_KEY to itemJson)
+
         )
     }
 }

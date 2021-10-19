@@ -88,7 +88,7 @@ class ApiClient @Inject constructor() {
         try {
             ca = cf.generateCertificate(caInput)
         } finally {
-            caInput?.close()
+            caInput.close()
         }
         return ca
     }

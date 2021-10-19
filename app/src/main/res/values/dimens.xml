@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="text_size_very_small">8sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">13sp</dimen>
+    <dimen name="text_size_normal_semiBold">14sp</dimen>
+    <dimen name="text_size_normal_bold">15sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_x_large">20sp</dimen>
+    <dimen name="text_size_xx_large">32sp</dimen>
+
+    <dimen name="dimen_small">5dp</dimen>
+    <dimen name="dimen_very_small">2dp</dimen>
+    <dimen name="dimen_normal">8dp</dimen>
+    <dimen name="dimen_normal_medium">10dp</dimen>
+    <dimen name="dimen_large">15dp</dimen>
+    <dimen name="dimen_x_large">18dp</dimen>
+    <dimen name="dimen_xx_large">25dp</dimen>
+    <dimen name="dimen_xxx_large">30dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+
+
+    // textview sizes
+
+    <dimen name="tv_very_small">8sp</dimen>
+    <dimen name="tv_small">12sp</dimen>
+    <dimen name="tv_normal">13sp</dimen>
+    <dimen name="tv_normal_semiBold">14sp</dimen>
+    <dimen name="tv_normal_bold">16sp</dimen>
+    <dimen name="tv_semiTitle">16sp</dimen>
+    <dimen name="tv_Title">18sp</dimen>
+
+
+
+
+    <dimen name="tv_large">22sp</dimen>
+
+
+</resources>

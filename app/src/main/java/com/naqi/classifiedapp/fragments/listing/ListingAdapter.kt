@@ -1,20 +1,25 @@
 package com.naqi.classifiedapp.fragments.listing
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.naqi.classifiedapp.ClassifiedApp
 import com.naqi.classifiedapp.databinding.ResultItemBinding
 import com.naqi.classifiedapp.models.ResultItem
 import com.naqi.classifiedapp.utils.Utils.formatDate
+import java.util.*
+import kotlin.collections.ArrayList
 
-class ListingAdapter(private val listener: ItemListener) :
+class ListingAdapter(private val listener: ItemListener, private val context: Context?) :
     RecyclerView.Adapter<ListingViewHolder>() {
     private val items = ArrayList<ResultItem>()
 
     interface ItemListener {
-        fun onClickedItem(characterId: String)
+        fun onClickedItem(itemJson: String)
 
     }
 
@@ -27,7 +32,7 @@ class ListingAdapter(private val listener: ItemListener) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {
         val binding: ResultItemBinding =
             ResultItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListingViewHolder(binding, listener)
+        return ListingViewHolder(binding, listener, context)
     }
 
     override fun onBindViewHolder(holder: ListingViewHolder, position: Int) =
@@ -38,7 +43,7 @@ class ListingAdapter(private val listener: ItemListener) :
 
 class ListingViewHolder(
     private val itemBinding: ResultItemBinding,
-    private val listener: ListingAdapter.ItemListener
+    private val listener: ListingAdapter.ItemListener, private val context: Context?
 ) : RecyclerView.ViewHolder(itemBinding.root),
     View.OnClickListener {
 
@@ -51,17 +56,19 @@ class ListingViewHolder(
     @SuppressLint("SetTextI18n")
     fun bind(item: ResultItem) {
         this.item = item
-        itemBinding.name.text = item.name
+        itemBinding.name.text = item.name.capitalize(Locale.US)
         itemBinding.price.text = item.price
         itemBinding.dateOfCreation.text = formatDate(item.created_at)
-//        Glide.with(itemBinding.root)
-//            .load(item.image)
-//            .transform(CircleCrop())
-//            .into(itemBinding.image)
+
+        val imageLoader = (context?.applicationContext as ClassifiedApp).imageLoader
+        imageLoader.displayImage(
+            item.image_urls.first(),
+            itemBinding.image
+        )
     }
 
     override fun onClick(v: View?) {
-        listener.onClickedItem(item.uid)
+        listener.onClickedItem(Gson().toJson(item))
     }
 }
 
