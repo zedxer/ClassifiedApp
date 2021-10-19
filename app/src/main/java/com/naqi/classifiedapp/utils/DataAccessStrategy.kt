@@ -10,6 +10,7 @@ fun <T> performGetOperation(
 ): LiveData<Resource<T>> =
     liveData(Dispatchers.IO) {
         val liveData = MutableLiveData<Resource<T>>()
+        emit(Resource.loading())
         val responseStatus = networkCall.invoke()
         if (responseStatus.status == Resource.Status.SUCCESS) {
             liveData.postValue(Resource.success(responseStatus.data!!))

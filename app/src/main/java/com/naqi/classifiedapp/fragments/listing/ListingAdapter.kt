@@ -9,7 +9,8 @@ import com.naqi.classifiedapp.databinding.ResultItemBinding
 import com.naqi.classifiedapp.models.ResultItem
 import com.naqi.classifiedapp.utils.Utils.formatDate
 
-class ListingAdapter(private val listener: ItemListener): RecyclerView.Adapter<ListingViewHolder>() {
+class ListingAdapter(private val listener: ItemListener) :
+    RecyclerView.Adapter<ListingViewHolder>() {
     private val items = ArrayList<ResultItem>()
 
     interface ItemListener {
@@ -24,14 +25,21 @@ class ListingAdapter(private val listener: ItemListener): RecyclerView.Adapter<L
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {
-        val binding: ResultItemBinding = ResultItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListingViewHolder(binding, listener)    }
+        val binding: ResultItemBinding =
+            ResultItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListingViewHolder(binding, listener)
+    }
 
-    override fun onBindViewHolder(holder: ListingViewHolder, position: Int) = holder.bind(items[position])
+    override fun onBindViewHolder(holder: ListingViewHolder, position: Int) =
+        holder.bind(items[position])
 
     override fun getItemCount(): Int = items.size
 }
-class ListingViewHolder(private val itemBinding: ResultItemBinding, private val listener: ListingAdapter.ItemListener) : RecyclerView.ViewHolder(itemBinding.root),
+
+class ListingViewHolder(
+    private val itemBinding: ResultItemBinding,
+    private val listener: ListingAdapter.ItemListener
+) : RecyclerView.ViewHolder(itemBinding.root),
     View.OnClickListener {
 
     private lateinit var item: ResultItem
