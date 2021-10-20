@@ -66,7 +66,6 @@ class ItemDetailFragment : Fragment() {
         binding.pager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL;
         binding.pager2.setAdapter(adapter)
     }
-
     fun setListeners() {
         binding.appBarLayout.addOnOffsetChangedListener(object :
             AppBarLayout.OnOffsetChangedListener {
