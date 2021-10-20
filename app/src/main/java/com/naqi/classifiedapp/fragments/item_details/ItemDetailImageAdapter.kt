@@ -20,11 +20,10 @@ import java.util.*
 class ItemDetailImageAdapter(private val context: Context?) :
     RecyclerView.Adapter<ItemDetailImageViewHolder>() {
 
-    private val items = ArrayList<String>()
+    private val items = ArrayList<String> ()
 
     interface ItemListener {
         fun onClickedItem(itemJson: String)
-
     }
 
     fun setItems(items: ArrayList<String>) {
