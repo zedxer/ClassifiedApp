@@ -9,10 +9,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.naqi.classifiedapp.ClassifiedApp
 import com.naqi.classifiedapp.databinding.ItemDetailImageBinding
-import com.naqi.classifiedapp.databinding.ResultItemBinding
-import com.naqi.classifiedapp.fragments.listing.ListingViewHolder
-import com.naqi.classifiedapp.models.ResultItem
-import com.naqi.classifiedapp.utils.Utils
 import com.naqi.imageloader.core.assist.FailReason
 import com.naqi.imageloader.core.listener.ImageLoadingListener
 import java.util.*
@@ -20,7 +16,7 @@ import java.util.*
 class ItemDetailImageAdapter(private val context: Context?) :
     RecyclerView.Adapter<ItemDetailImageViewHolder>() {
 
-    private val items = ArrayList<String> ()
+    private val items = ArrayList<String>()
 
     interface ItemListener {
         fun onClickedItem(itemJson: String)
@@ -58,7 +54,7 @@ class ItemDetailImageViewHolder(
         val imageLoader = (context?.applicationContext as ClassifiedApp).imageLoader
         imageLoader.displayImage(
             item,
-            itemBinding.itemImage, object:ImageLoadingListener{
+            itemBinding.itemImage, object : ImageLoadingListener {
                 override fun onLoadingStarted(imageUri: String?, view: View?) {
                     itemBinding.itemImageProgress.visibility = View.VISIBLE
                 }

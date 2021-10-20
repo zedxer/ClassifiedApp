@@ -1,14 +1,13 @@
 package com.naqi.classifiedapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.naqi.classifiedapp.R
 import com.naqi.classifiedapp.databinding.ActivityMainBinding
-import com.naqi.classifiedapp.fragments.listing.ListingFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

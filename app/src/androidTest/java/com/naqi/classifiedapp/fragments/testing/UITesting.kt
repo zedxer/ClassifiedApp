@@ -7,7 +7,6 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.internal.runner.junit4.AndroidJUnit4Builder
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.naqi.classifiedapp.R
 import com.naqi.classifiedapp.activities.MainActivity

@@ -1,12 +1,11 @@
 package com.naqi.classifiedapp.fragments.item_details
 
 import android.annotation.SuppressLint
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,11 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
-import com.naqi.classifiedapp.R
 import com.naqi.classifiedapp.databinding.ItemDetailFragmentBinding
-import com.naqi.classifiedapp.databinding.ListingFragmentBinding
-import com.naqi.classifiedapp.fragments.listing.ListingAdapter
-import com.naqi.classifiedapp.fragments.listing.ListingViewModel
 import com.naqi.classifiedapp.models.ResultItem
 import com.naqi.classifiedapp.utils.Constants.ITEM_JSON_KEY
 import com.naqi.classifiedapp.utils.Utils

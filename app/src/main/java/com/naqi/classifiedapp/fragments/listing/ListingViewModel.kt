@@ -1,6 +1,5 @@
 package com.naqi.classifiedapp.fragments.listing
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.naqi.classifiedapp.data.repository.ItemRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
